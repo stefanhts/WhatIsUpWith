@@ -15,7 +15,13 @@ const SearchBar: React.FC<Props> = (props) => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    axios.post('/search', { searchTerm })
+    // send a post request to localhost:8080/search
+    // with the search term as the body
+    // and then log the response
+    //
+    // hint: use axios.post
+
+    axios.post('http://localhost:8080/search', { searchTerm , maxResults: 10})
       .then((response) => {
         // Do something with the response here
         console.log(response);
